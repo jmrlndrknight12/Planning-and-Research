@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
             io.unobserve(en.target);
           }
         }),
-      { threshold: 0.12 },
+      { threshold: 0 },
     );
     els.forEach((el) => io.observe(el));
   } else els.forEach((el) => el.classList.add("in"));
