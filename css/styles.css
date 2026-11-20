@@ -210,7 +210,7 @@ ul {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../assets/building.jpg") center / cover no-repeat;
+  background: url("../assets/building.jpg") center 62% / cover no-repeat;
   opacity: 0.16;
   pointer-events: none;
 }
