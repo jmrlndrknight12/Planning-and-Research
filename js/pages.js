@@ -112,7 +112,7 @@
         .map(
           (p) => `
         <div class="card person reveal">${avatar(p.name, p.photo)}<h3>${p.name}</h3><small>${p.role}</small>
-          <div class="meta" style="justify-content:center;flex-direction:column;align-items:center;gap:4px"><span>${icon("mail")}${p.email}</span><span>${icon("phone")}${p.phone}</span></div></div>`,
+          ${p.email || p.phone ? `<div class="meta" style="justify-content:center;flex-direction:column;align-items:center;gap:4px">${p.email ? `<span>${icon("mail")}${p.email}</span>` : ""}${p.phone ? `<span>${icon("phone")}${p.phone}</span>` : ""}</div>` : ""}</div>`,
         )
         .join("")}</div>`,
       true,
