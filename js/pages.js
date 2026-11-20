@@ -169,43 +169,17 @@
             .join("")}</tbody>
         </table>
       </div>`;
-    let lastDistrict = "";
-    const schoolRows = (p.schools || [])
-      .map((s) => {
-        const group =
-          s.district === lastDistrict
-            ? ""
-            : `<tr class="group"><td colspan="4">${(lastDistrict = s.district)}</td></tr>`;
-        return `${group}<tr>
-            <td><b>${s.school}</b><br><span class="muted">${s.level}</span></td>
-            <td>${s.head}<br><span class="muted">${s.headRole}</span></td>
-            <td>${s.coordinator || "—"}</td>
-            <td>${s.role || "—"}</td>
-          </tr>`;
-      })
-      .join("");
-    const srcTable = `<div class="table-wrap">
-        <table class="sheet">
-          <thead><tr>
-            <th>School</th>
-            <th>School Head</th>
-            <th>School Research Coordinator</th>
-            <th>Designation</th>
-          </tr></thead>
-          <tbody>${schoolRows}</tbody>
-        </table>
-      </div>`;
     return (
       pageHero(p.title, p.sub) +
       sec(
         `<div class="grid g2">${p.items
           .map((c) => {
             const isDrc = c.name.startsWith("District Research Committee");
-            const isSrc = c.name.startsWith("School Research Committee");
-            const body =
-              isDrc ? drcTable : isSrc ? srcTable : `<span class="tag">Members</span><ul class="bullets">${c.members.map((m) => `<li>${m}</li>`).join("")}</ul>`;
+            const body = isDrc
+              ? drcTable
+              : `<span class="tag">Members</span><ul class="bullets">${c.members.map((m) => `<li>${m}</li>`).join("")}</ul>`;
             return `
-      <div class="card card-body reveal${isDrc || isSrc ? " span-2" : ""}"><div class="row" style="padding:0 0 14px"><div class="ico">${icon("users")}</div><div class="grow"><h3>${c.name}</h3><p style="margin:0">${c.desc}</p></div></div>
+      <div class="card card-body reveal${isDrc ? " span-2" : ""}"><div class="row" style="padding:0 0 14px"><div class="ico">${icon("users")}</div><div class="grow"><h3>${c.name}</h3><p style="margin:0">${c.desc}</p></div></div>
       ${body}</div>`;
           })
           .join("")}</div>`,
