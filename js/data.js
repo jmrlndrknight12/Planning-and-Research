@@ -299,8 +299,49 @@ window.ABOUT = {
                       },
                     ],
                   },
-                  { name: "Social Mobilization and Networking", titleOnly: true },
-                  { name: "School Health and Nutrition", titleOnly: true },
+                  {
+                    name: "Social Mobilization and Networking",
+                    titleOnly: true,
+                    children: [
+                      {
+                        name: "Dr. Caroline C. Gayeta",
+                        role: "Senior Education Program Specialist – SocMob",
+                        photo: "",
+                      },
+                      {
+                        name: "Maria Vinnah C. Delgado",
+                        role: "Education Program Specialist II",
+                        photo: "",
+                      },
+                      {
+                        name: "Henry C. Ramirez",
+                        role: "Project Development Officer II – DRRM",
+                        photo: "",
+                      },
+                    ],
+                  },
+                  {
+                    name: "School Health and Nutrition",
+                    titleOnly: true,
+                    children: [
+                      {
+                        name: "Dra. Belinda D. Sabellano",
+                        role: "Medical Officer III",
+                        photo: "",
+                        children: [
+                          { name: "Dr. Joel A. Perez", role: "Dentist II", photo: "" },
+                          { name: "Marianne R. Medina", role: "Nurse II", photo: "" },
+                          { name: "June G. Untalan", role: "Nurse II", photo: "" },
+                          { name: "Gene Karlo D. Abag", role: "Nurse II", photo: "" },
+                          { name: "Dra. Jesusa A. Cruzat", role: "Dentist II", photo: "" },
+                          { name: "Shiela L. Buenafe", role: "Nurse II", photo: "" },
+                          { name: "Janize M. Untalan", role: "Nurse II", photo: "" },
+                          { name: "Czarina Eloise D. Cantre", role: "Technical Assistant I", photo: "" },
+                          { name: "Mhiko E. Benedicto", role: "Technical Assistant I", photo: "" },
+                        ],
+                      },
+                    ],
+                  },
                 ],
               },
             ],
