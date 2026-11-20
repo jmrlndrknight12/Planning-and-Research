@@ -241,10 +241,17 @@ ul {
   overflow: hidden;
 }
 
+.logo-ph.has-logo {
+  border-style: solid;
+  border-color: var(--line);
+  background: #fff;
+  padding: 4px;
+}
+
 .logo-ph img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .brand-text {
