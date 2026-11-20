@@ -224,7 +224,22 @@ window.ABOUT = {
                 role: "Education Program Supervisor",
                 photo: "",
                 children: [
-                  { name: "Youth Formation", titleOnly: true },
+                  {
+                    name: "Youth Formation",
+                    titleOnly: true,
+                    children: [
+                      {
+                        name: "Jesric Brian F. Panaligan",
+                        role: "Project Development Officer I",
+                        photo: "",
+                      },
+                      {
+                        name: "Rhubie M. Silang",
+                        role: "Project Development Officer I",
+                        photo: "",
+                      },
+                    ],
+                  },
                   { name: "Planning and Research", titleOnly: true },
                   { name: "Human Resource and Development", titleOnly: true },
                   { name: "Education Facilities", titleOnly: true },
