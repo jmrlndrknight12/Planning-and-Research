@@ -37,7 +37,7 @@
       .toUpperCase();
   };
   const avatar = (name, photo) =>
-    `<div class="avatar">${photo ? `<img src="${photo}" alt="${name}">` : initials(name)}</div>`;
+    `<div class="avatar">${photo ? `<img src="${encodeURI(photo)}" alt="${name}">` : initials(name)}</div>`;
 
   const art = (i, image, label) =>
     `<div class="art a${(i % 4) + 1}">${image ? `<img src="${image}" alt="">` : `<span class="ph">IMAGE PLACEHOLDER</span><span class="circle"></span>`}${label ? `<span class="tag">${label}</span>` : ""}</div>`;

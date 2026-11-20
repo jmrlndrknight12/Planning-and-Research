@@ -171,7 +171,7 @@ window.ABOUT = {
       role: "Chief Education Supervisor",
       email: "",
       phone: "",
-      photo: "",
+      photo: "assets/DR. ANGELISA A. AMOTO.png",
     },
     {
       name: "Dr. Fe M. Fallurin",
@@ -192,7 +192,7 @@ window.ABOUT = {
       role: "Senior Education Program Specialist – Planning and Research",
       email: "",
       phone: "",
-      photo: "",
+      photo: "assets/Marc Elmer M. Perez.jpg",
     },
   ],
   hub: {
@@ -207,17 +207,17 @@ window.ABOUT = {
   org: {
     name: "Hermogenes M. Panganiban, CESO V",
     role: "Schools Division Superintendent",
-    photo: "",
+    photo: "assets/HERMOGENES M. PANGANIBAN.png",
     children: [
       {
         name: "Dr. Catherine V. Maranan, CESO VI",
         role: "Assistant Schools Division Superintendent",
-        photo: "",
+        photo: "assets/CATHERINE V. MARANAN.png",
         children: [
           {
             name: "Dr. Angelisa A. Amoto",
             role: "Chief Education Supervisor",
-            photo: "",
+            photo: "assets/DR. ANGELISA A. AMOTO.png",
             children: [
               {
                 name: "Dr. Fe M. Fallurin",
@@ -252,7 +252,7 @@ window.ABOUT = {
                       {
                         name: "Marc Elmer M. Perez",
                         role: "Senior Education Program Specialist – Planning and Research",
-                        photo: "",
+                        photo: "assets/Marc Elmer M. Perez.jpg",
                       },
                     ],
                   },
