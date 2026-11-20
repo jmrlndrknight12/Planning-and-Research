@@ -266,26 +266,21 @@ window.ABOUT = {
 window.PAGES = {
   committees: {
     title: "Research Committees",
-    sub: "Committees that oversee research across the Division.",
+    sub: "The Schools Division, District, and School research committees of SDO Batangas City.",
     items: [
       {
-        name: "Research Review Committee",
-        desc: "[Mandate / description]",
+        name: "Schools Division Research Committee (SDRC)",
+        desc: "Oversees research management, proposal review, and technical assistance at the schools division level.",
         members: ["[Chairperson]", "[Member]", "[Member]"],
       },
       {
-        name: "Research Ethics Committee",
-        desc: "[Mandate / description]",
+        name: "District Research Committee (DRC)",
+        desc: "Coordinates research activities, reviews, and support across schools in the district.",
         members: ["[Chairperson]", "[Member]", "[Member]"],
       },
       {
-        name: "Research Dissemination Committee",
-        desc: "[Mandate / description]",
-        members: ["[Chairperson]", "[Member]", "[Member]"],
-      },
-      {
-        name: "Research Capacity Building Committee",
-        desc: "[Mandate / description]",
+        name: "School Research Committee (SRC)",
+        desc: "Manages research initiatives, proposals, and implementation in the school.",
         members: ["[Chairperson]", "[Member]", "[Member]"],
       },
     ],
