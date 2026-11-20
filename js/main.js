@@ -38,7 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") closeModal();
   });
   const openPerson = (p) => {
-    mbody.innerHTML = `${avatar(p.name, p.photo)}<h3>${p.name}</h3><p><b>${p.role}</b></p>
+    mbody.innerHTML = p.titleOnly
+      ? `<h3>${p.name}</h3><p><b>${p.role}</b></p>`
+      : `${avatar(p.name, p.photo)}<h3>${p.name}</h3><p><b>${p.role}</b></p>
       <p>${p.email || "[email]"} · ${p.phone || "[phone]"}</p>`;
     modal.classList.add("open");
   };
@@ -111,8 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (key === "about") {
     const build = (n, lvl) => {
       const kids = n.children || [];
-      return `<li><div class="node lvl${Math.min(lvl, 3)}" tabindex="0" role="button" data-n='${encodeURIComponent(JSON.stringify({ name: n.name, role: n.role, photo: n.photo, email: n.email, phone: n.phone }))}'>
-        ${avatar(n.name, n.photo)}<b>${n.name}</b><span>${n.role}</span>
+      return `<li><div class="node lvl${Math.min(lvl, 3)}${n.titleOnly ? " title-only" : ""}" tabindex="0" role="button" data-n='${encodeURIComponent(JSON.stringify({ name: n.name, role: n.role, photo: n.photo, email: n.email, phone: n.phone, titleOnly: n.titleOnly }))}'>
+        ${n.titleOnly ? "" : avatar(n.name, n.photo)}<b>${n.name}</b><span>${n.role}</span>
         ${kids.length ? `<button class="toggle" aria-label="Toggle branch" title="Expand / collapse">–</button>` : ""}</div>
         ${kids.length ? `<ul>${kids.map((k) => build(k, lvl + 1)).join("")}</ul>` : ""}</li>`;
     };

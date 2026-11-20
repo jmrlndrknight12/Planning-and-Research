@@ -1294,6 +1294,13 @@ ul {
   margin-bottom: 8px;
 }
 
+.node.title-only {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 78px;
+}
+
 .node b {
   display: block;
   font-size: .9rem;
