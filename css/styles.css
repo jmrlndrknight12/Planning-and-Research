@@ -384,6 +384,8 @@ ul {
   position: relative;
   color: #fff;
   overflow: hidden;
+  min-height: calc(100vh - 150px);
+  min-height: calc(100svh - 150px);
   background:
     radial-gradient(900px 500px at 85% -10%, rgba(95, 217, 192, .55), transparent 60%),
     radial-gradient(700px 500px at 0% 110%, rgba(242, 184, 75, .22), transparent 60%),
