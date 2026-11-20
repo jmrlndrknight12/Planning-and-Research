@@ -175,15 +175,12 @@
         const group =
           s.district === lastDistrict
             ? ""
-            : `<tr class="group"><td colspan="6">${(lastDistrict = s.district)}</td></tr>`;
-        const mail = s.email ? `<a href="mailto:${s.email}">${s.email}</a>` : "—";
+            : `<tr class="group"><td colspan="4">${(lastDistrict = s.district)}</td></tr>`;
         return `${group}<tr>
             <td><b>${s.school}</b><br><span class="muted">${s.level}</span></td>
             <td>${s.head}<br><span class="muted">${s.headRole}</span></td>
             <td>${s.coordinator || "—"}</td>
             <td>${s.role || "—"}</td>
-            <td class="nowrap">${mail}</td>
-            <td class="nowrap">${s.phone || "—"}</td>
           </tr>`;
       })
       .join("");
@@ -194,8 +191,6 @@
             <th>School Head</th>
             <th>School Research Coordinator</th>
             <th>Designation</th>
-            <th>DepEd Email</th>
-            <th>Contact Number</th>
           </tr></thead>
           <tbody>${schoolRows}</tbody>
         </table>
