@@ -1669,7 +1669,7 @@ ul {
 .sheet {
   width: 100%;
   border-collapse: collapse;
-  min-width: 980px;
+  min-width: 720px;
   font-size: .86rem;
 }
 

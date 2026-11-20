@@ -167,9 +167,6 @@
             <th>PSDS</th>
             <th>District Research Coordinator</th>
             <th>Designation</th>
-            <th>DepEd Email</th>
-            <th>Contact Number</th>
-            <th>Turnitin</th>
           </tr></thead>
           <tbody>${m.rows
             .map(
@@ -178,9 +175,6 @@
             <td>${r.psds}<br><span class="muted">${r.psdsRole || "PSDS"}</span><br>${mail(r.psdsEmail)}</td>
             <td>${cell(r.name)}</td>
             <td>${cell(r.role)}</td>
-            <td>${mail(r.email)}</td>
-            <td>${cell(r.phone)}</td>
-            <td>${r.turnitin ? `<span class="tag">${r.turnitin}</span>` : "—"}</td>
           </tr>`,
             )
             .join("")}</tbody>
