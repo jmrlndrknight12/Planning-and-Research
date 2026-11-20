@@ -111,7 +111,7 @@
         <li><a href="data-management.html">Data Management</a></li>
         <li><a href="brace.html">BRACE Organization</a></li></ul></div>
       <div><h4>Contact</h4><ul>
-        <li>${c.address}</li><li>${c.email}</li><li>${c.phone}</li><li>${c.hours}</li></ul></div>
+        <li>${c.mapUrl ? `<a href="${c.mapUrl}" target="_blank" rel="noopener">${c.address}</a>` : c.address}</li><li>${c.email}</li><li>${c.phone}</li><li>${c.hours}</li></ul></div>
     </div>
     <div class="copy">© ${new Date().getFullYear()} ${S.office} – ${S.unit}. All rights reserved. · [Official statements pending]</div></footer>
     <button class="to-top" aria-label="Back to top">↑</button>

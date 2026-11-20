@@ -121,10 +121,10 @@
       ${head("Location", "Research Hub Location")}
       <div class="hub reveal">
         <div class="card hub-info"><h3>${a.hub.name}</h3><ul>
-          <li>${icon("pin")}<span>${a.hub.address}</span></li>
+          <li>${icon("pin")}<span>${a.hub.mapUrl ? `<a href="${a.hub.mapUrl}" target="_blank" rel="noopener">${a.hub.address}</a>` : a.hub.address}</span></li>
           <li>${icon("clock")}<span>${a.hub.hours}</span></li>
           <li>${icon("mail")}<span>${a.hub.contact}</span></li></ul></div>
-        <div class="map-ph">${a.hub.mapEmbed ? `<iframe src="${a.hub.mapEmbed}" loading="lazy" title="Map"></iframe>` : `<div>${icon("pin")}<br>Map placeholder<br><small style="font-weight:500">Paste Google Maps embed URL in data.js</small></div>`}</div>
+        <div class="map-ph${a.hub.mapEmbed ? " has-map" : ""}">${a.hub.mapEmbed ? `<iframe src="${a.hub.mapEmbed}" loading="lazy" title="Map of ${a.hub.name}"></iframe>` : `<div>${icon("pin")}<br>Map placeholder<br><small style="font-weight:500">Paste Google Maps embed URL in data.js</small></div>`}</div>
       </div>`);
     const org = sec(
       `
