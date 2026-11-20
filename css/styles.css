@@ -1678,7 +1678,7 @@ ul {
 .sheet {
   width: 100%;
   border-collapse: collapse;
-  min-width: 720px;
+  min-width: 1180px;
   font-size: .86rem;
 }
 
@@ -1716,7 +1716,11 @@ ul {
 
 .sheet a {
   color: var(--primary-600);
-  word-break: break-word;
+  white-space: nowrap;
+}
+
+.sheet td.nowrap {
+  white-space: nowrap;
 }
 
 .sheet .muted {
