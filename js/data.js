@@ -24,7 +24,7 @@ window.SITE = {
     mapUrl: "https://maps.app.goo.gl/18jQ1iyhSeGWWk4t7",
     email: "[official.email@deped.gov.ph]",
     phone: "[(043) 000-0000]",
-    hours: "Monday – Friday, 8:00 AM – 5:00 PM",
+    hours: "Monday – Thursday, 8:00 AM – 5:00 PM · Onsite<br>Friday · Work from home",
   },
 
   nav: [
@@ -198,7 +198,7 @@ window.ABOUT = {
   hub: {
     name: "Schools Division Office of Batangas City",
     address: "DepEd Schools Division Office of Batangas City",
-    hours: "Monday – Friday, 8:00 AM – 5:00 PM",
+    hours: "Monday – Thursday, 8:00 AM – 5:00 PM · Onsite<br>Friday · Work from home",
     contact: "[email] · [phone]",
     mapUrl: "https://maps.app.goo.gl/18jQ1iyhSeGWWk4t7",
     mapEmbed: "https://maps.google.com/maps?q=13.7606277,121.0639798&z=16&output=embed",
