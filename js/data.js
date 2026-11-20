@@ -205,56 +205,26 @@ window.ABOUT = {
   },
   /* Org chart – hierarchical. You can add "children" at any number of levels. */
   org: {
-    name: "[Name]",
-    role: "Schools Division Superintendent (SDS)",
+    name: "Hermogenes M. Panganiban, CESO V",
+    role: "Schools Division Superintendent",
     photo: "",
-    email: "[email]",
-    phone: "[phone]",
     children: [
       {
-        name: "[Name]",
-        role: "Assistant Schools Division Superintendent (ASDS)",
+        name: "Dr. Catherine V. Maranan, CESO VI",
+        role: "Assistant Schools Division Superintendent",
         photo: "",
-        email: "[email]",
-        phone: "[phone]",
         children: [
           {
-            name: "[Name]",
-            role: "Chief Education Supervisor – CID",
-            photo: "",
-            children: [
-              { name: "[Name]", role: "Education Program Supervisor", photo: "" },
-              { name: "[Name]", role: "Public Schools District Supervisors", photo: "" },
-            ],
-          },
-          {
-            name: "[Name]",
-            role: "Chief Education Supervisor – SGOD",
+            name: "Dr. Angelisa A. Amoto",
+            role: "Chief Education Supervisor",
             photo: "",
             children: [
               {
-                name: "[Name]",
-                role: "Planning and Research Section",
+                name: "Dr. Fe M. Fallurin",
+                role: "Education Program Supervisor",
                 photo: "",
-                children: [
-                  { name: "[Name]", role: "Planning Officer III", photo: "" },
-                  {
-                    name: "[Name]",
-                    role: "Education Program Specialist – Research",
-                    photo: "",
-                  },
-                  { name: "[Name]", role: "Project Development Officer", photo: "" },
-                  { name: "[Name]", role: "Statistician / Data Analyst", photo: "" },
-                ],
               },
-              { name: "[Name]", role: "Other SGOD Personnel", photo: "" },
             ],
-          },
-          {
-            name: "[Name]",
-            role: "Administrative Officer V",
-            photo: "",
-            children: [{ name: "[Name]", role: "Administrative Personnel", photo: "" }],
           },
         ],
       },
