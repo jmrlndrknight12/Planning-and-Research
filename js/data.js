@@ -240,10 +240,65 @@ window.ABOUT = {
                       },
                     ],
                   },
-                  { name: "Planning and Research", titleOnly: true },
-                  { name: "Human Resource and Development", titleOnly: true },
-                  { name: "Education Facilities", titleOnly: true },
-                  { name: "School Management, Monitoring and Evaluation", titleOnly: true },
+                  {
+                    name: "Planning and Research",
+                    titleOnly: true,
+                    children: [
+                      {
+                        name: "Madonna B. Abrugena",
+                        role: "Planning Officer III",
+                        photo: "",
+                      },
+                      {
+                        name: "Marc Elmer M. Perez",
+                        role: "Senior Education Program Specialist – Planning and Research",
+                        photo: "",
+                      },
+                    ],
+                  },
+                  {
+                    name: "Human Resource and Development",
+                    titleOnly: true,
+                    children: [
+                      {
+                        name: "Alvin P. Metrillo",
+                        role: "Senior Education Program Specialist – HRD",
+                        photo: "",
+                      },
+                      {
+                        name: "Rizza E. Baual",
+                        role: "Education Program Specialist II",
+                        photo: "",
+                      },
+                    ],
+                  },
+                  {
+                    name: "Education Facilities",
+                    titleOnly: true,
+                    children: [
+                      {
+                        name: "Engr. Eduardo M. Ulit",
+                        role: "Engineer III",
+                        photo: "",
+                      },
+                    ],
+                  },
+                  {
+                    name: "School Management, Monitoring and Evaluation",
+                    titleOnly: true,
+                    children: [
+                      {
+                        name: "Magielyn R. Babao",
+                        role: "Senior Education Program Specialist – SMME",
+                        photo: "",
+                      },
+                      {
+                        name: "Connie M. Balse",
+                        role: "Education Program Specialist II",
+                        photo: "",
+                      },
+                    ],
+                  },
                   { name: "Social Mobilization and Networking", titleOnly: true },
                   { name: "School Health and Nutrition", titleOnly: true },
                 ],
