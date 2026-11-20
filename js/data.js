@@ -370,7 +370,7 @@ window.PAGES = {
       },
       {
         name: "School Research Committee (SRC)",
-        desc: "Manages research initiatives, proposals, and implementation in the school.",
+        desc: "School research coordinators for public elementary and secondary schools, as of October 2025.",
         members: ["[Chairperson]", "[Member]", "[Member]"],
       },
     ],
