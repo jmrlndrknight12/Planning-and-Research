@@ -148,50 +148,26 @@
   /* ---------------- COMMITTEES ---------------- */
   R.committees = () => {
     const p = P().committees;
-    const cell = (v) => {
-      if (!v || (Array.isArray(v) && !v.length)) return "—";
-      return (Array.isArray(v) ? v : [v]).join("<br>");
-    };
-    const mail = (v) => {
-      const list = (Array.isArray(v) ? v : v ? [v] : []).filter(Boolean);
-      if (!list.length) return "—";
-      return list.map((e) => `<a href="mailto:${e}">${e}</a>`).join("<br>");
-    };
-    const m = p.masterlist;
-    const table = `
-      ${head("Masterlist", m.title, m.note)}
-      <div class="table-wrap reveal">
-        <table class="sheet">
-          <thead><tr>
-            <th>District</th>
-            <th>PSDS</th>
-            <th>District Research Coordinator</th>
-            <th>Designation</th>
-          </tr></thead>
-          <tbody>${m.rows
-            .map(
-              (r) => `<tr>
-            <td><b>${r.district}</b></td>
-            <td>${r.psds}<br><span class="muted">${r.psdsRole || "PSDS"}</span><br>${mail(r.psdsEmail)}</td>
-            <td>${cell(r.name)}</td>
-            <td>${cell(r.role)}</td>
-          </tr>`,
-            )
-            .join("")}</tbody>
-        </table>
-      </div>`;
+    const names = (v) => (Array.isArray(v) ? v.join(" and ") : v);
+    const coordinators = (p.masterlist?.rows || [])
+      .map((r) => {
+        const role = r.role ? `, ${r.role}` : "";
+        return `<li><b>${r.district}</b> — ${names(r.name)}${role}<br><span class="muted">PSDS: ${r.psds}</span></li>`;
+      })
+      .join("");
     return (
       pageHero(p.title, p.sub) +
       sec(
         `<div class="grid g2">${p.items
-          .map(
-            (c) => `
-      <div class="card card-body reveal"><div class="row" style="padding:0 0 14px"><div class="ico">${icon("users")}</div><div class="grow"><h3>${c.name}</h3><p style="margin:0">${c.desc}</p></div></div>
-      <span class="tag">Members</span><ul class="bullets">${c.members.map((m) => `<li>${m}</li>`).join("")}</ul></div>`,
-          )
+          .map((c) => {
+            const isDrc = c.name.startsWith("District Research Committee");
+            const list = isDrc ? coordinators : c.members.map((m) => `<li>${m}</li>`).join("");
+            return `
+      <div class="card card-body reveal${isDrc ? " span-2" : ""}"><div class="row" style="padding:0 0 14px"><div class="ico">${icon("users")}</div><div class="grow"><h3>${c.name}</h3><p style="margin:0">${c.desc}</p></div></div>
+      <span class="tag">${isDrc ? "Coordinators" : "Members"}</span><ul class="bullets">${list}</ul></div>`;
+          })
           .join("")}</div>`,
-      ) +
-      sec(table, true)
+      )
     );
   };
 

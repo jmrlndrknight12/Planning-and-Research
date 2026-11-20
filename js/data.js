@@ -365,7 +365,7 @@ window.PAGES = {
       },
       {
         name: "District Research Committee (DRC)",
-        desc: "Coordinates research activities, reviews, and support across schools in the district.",
+        desc: "District research coordinators for public elementary and secondary schools, as of October 2025.",
         members: ["[Chairperson]", "[Member]", "[Member]"],
       },
       {
