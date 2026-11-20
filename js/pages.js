@@ -148,17 +148,56 @@
   /* ---------------- COMMITTEES ---------------- */
   R.committees = () => {
     const p = P().committees;
+    const cell = (v) => {
+      if (!v || (Array.isArray(v) && !v.length)) return "—";
+      return (Array.isArray(v) ? v : [v]).join("<br>");
+    };
+    const mail = (v) => {
+      const list = (Array.isArray(v) ? v : v ? [v] : []).filter(Boolean);
+      if (!list.length) return "—";
+      return list.map((e) => `<a href="mailto:${e}">${e}</a>`).join("<br>");
+    };
+    const m = p.masterlist;
+    const table = `
+      ${head("Masterlist", m.title, m.note)}
+      <div class="table-wrap reveal">
+        <table class="sheet">
+          <thead><tr>
+            <th>District</th>
+            <th>PSDS</th>
+            <th>District Research Coordinator</th>
+            <th>Designation</th>
+            <th>DepEd Email</th>
+            <th>Contact Number</th>
+            <th>Turnitin</th>
+          </tr></thead>
+          <tbody>${m.rows
+            .map(
+              (r) => `<tr>
+            <td><b>${r.district}</b></td>
+            <td>${r.psds}<br><span class="muted">${r.psdsRole || "PSDS"}</span><br>${mail(r.psdsEmail)}</td>
+            <td>${cell(r.name)}</td>
+            <td>${cell(r.role)}</td>
+            <td>${mail(r.email)}</td>
+            <td>${cell(r.phone)}</td>
+            <td>${r.turnitin ? `<span class="tag">${r.turnitin}</span>` : "—"}</td>
+          </tr>`,
+            )
+            .join("")}</tbody>
+        </table>
+      </div>`;
     return (
       pageHero(p.title, p.sub) +
       sec(
         `<div class="grid g2">${p.items
           .map(
-            (c, i) => `
+            (c) => `
       <div class="card card-body reveal"><div class="row" style="padding:0 0 14px"><div class="ico">${icon("users")}</div><div class="grow"><h3>${c.name}</h3><p style="margin:0">${c.desc}</p></div></div>
       <span class="tag">Members</span><ul class="bullets">${c.members.map((m) => `<li>${m}</li>`).join("")}</ul></div>`,
           )
           .join("")}</div>`,
-      )
+      ) +
+      sec(table, true)
     );
   };
 
