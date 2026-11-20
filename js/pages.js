@@ -128,9 +128,18 @@
       </div>`);
     const org = sec(
       `
-      ${head("Structure", "Organizational Structure", "Hold and drag to move the chart. Select a box for details. Use +/– to expand or collapse a branch.")}
-      <div class="org-tools"><button class="chip" id="org-expand">Expand all</button><button class="chip" id="org-collapse">Collapse all</button></div>
-      <div class="org-scroll reveal"><div class="tree" id="org-tree"></div></div>`,
+      ${head("Structure", "Organizational Structure", "Hold and drag to move the chart. Zoom in, zoom out, or choose See all. Select a box for details.")}
+      <div class="org-tools">
+        <button class="chip" id="org-expand" type="button">Expand all</button>
+        <button class="chip" id="org-collapse" type="button">Collapse all</button>
+        <div class="org-zoom">
+          <button class="chip" id="org-out" type="button" aria-label="Zoom out">−</button>
+          <span class="org-zoom-label" id="org-zoom-label">100%</span>
+          <button class="chip" id="org-in" type="button" aria-label="Zoom in">+</button>
+          <button class="chip" id="org-fit" type="button">See all</button>
+        </div>
+      </div>
+      <div class="org-scroll reveal"><div class="org-stage" id="org-stage"><div class="tree" id="org-tree"></div></div></div>`,
       true,
     );
     return mv + dir + hub + org;

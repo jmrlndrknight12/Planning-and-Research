@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const li = t.closest("li");
         li.classList.toggle("collapsed");
         t.textContent = li.classList.contains("collapsed") ? "+" : "–";
+        layout();
         e.stopPropagation();
         return;
       }
@@ -177,19 +178,72 @@ document.addEventListener("DOMContentLoaded", () => {
         if (n) n.click();
       }
     });
-    const setAll = (c) =>
+    const stage = document.getElementById("org-stage");
+    const zoomLabel = document.getElementById("org-zoom-label");
+    let scale = 1;
+    const minScale = 0.25;
+    const maxScale = 1.8;
+    const layout = () => {
+      const w = tree.scrollWidth;
+      const h = tree.scrollHeight;
+      tree.style.transform = `scale(${scale})`;
+      stage.style.width = `${Math.ceil(w * scale)}px`;
+      stage.style.height = `${Math.ceil(h * scale)}px`;
+      zoomLabel.textContent = `${Math.round(scale * 100)}%`;
+    };
+    const zoomAt = (next, clientX, clientY) => {
+      const prev = scale;
+      const rect = scroller.getBoundingClientRect();
+      const originX = clientX - rect.left + scroller.scrollLeft;
+      const originY = clientY - rect.top + scroller.scrollTop;
+      scale = Math.min(maxScale, Math.max(minScale, next));
+      const ratio = scale / prev;
+      layout();
+      scroller.scrollLeft = originX * ratio - (clientX - rect.left);
+      scroller.scrollTop = originY * ratio - (clientY - rect.top);
+    };
+    const zoomCenter = (next) => {
+      const rect = scroller.getBoundingClientRect();
+      zoomAt(next, rect.left + scroller.clientWidth / 2, rect.top + scroller.clientHeight / 2);
+    };
+    const fit = () => {
+      const w = tree.scrollWidth;
+      const h = tree.scrollHeight;
+      const availW = Math.max(scroller.clientWidth - 28, 80);
+      const availH = Math.max(scroller.clientHeight - 28, 80);
+      scale = Math.min(maxScale, Math.max(minScale, Math.min(availW / w, availH / h)));
+      layout();
+      scroller.scrollLeft = Math.max(0, (stage.offsetWidth - scroller.clientWidth) / 2);
+      scroller.scrollTop = 0;
+    };
+    document.getElementById("org-in").onclick = () => zoomCenter(scale + 0.1);
+    document.getElementById("org-out").onclick = () => zoomCenter(scale - 0.1);
+    document.getElementById("org-fit").onclick = fit;
+    scroller.addEventListener(
+      "wheel",
+      (e) => {
+        e.preventDefault();
+        zoomAt(scale + (e.deltaY < 0 ? 0.1 : -0.1), e.clientX, e.clientY);
+      },
+      { passive: false },
+    );
+    const setAll = (c) => {
       tree.querySelectorAll("li").forEach((li) => {
         if (li.querySelector(":scope>ul")) {
           li.classList.toggle("collapsed", c);
           li.querySelector(":scope>.node .toggle").textContent = c ? "+" : "–";
         }
       });
+      layout();
+    };
     document.getElementById("org-expand").onclick = () => setAll(false);
     document.getElementById("org-collapse").onclick = () => {
       setAll(true);
       tree.querySelector("li").classList.remove("collapsed");
       tree.querySelector(".toggle").textContent = "–";
+      layout();
     };
+    requestAnimationFrame(() => requestAnimationFrame(fit));
   }
 
   /* filters + search (awards, publications, resources) */
