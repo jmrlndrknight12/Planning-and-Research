@@ -148,23 +148,39 @@
   /* ---------------- COMMITTEES ---------------- */
   R.committees = () => {
     const p = P().committees;
-    const names = (v) => (Array.isArray(v) ? v.join(" and ") : v);
-    const coordinators = (p.masterlist?.rows || [])
-      .map((r) => {
-        const role = r.role ? `, ${r.role}` : "";
-        return `<li><b>${r.district}</b> — ${names(r.name)}${role}<br><span class="muted">PSDS: ${r.psds}</span></li>`;
-      })
-      .join("");
+    const names = (v) => (Array.isArray(v) ? v.join("<br>") : v || "—");
+    const table = `<div class="table-wrap">
+        <table class="sheet">
+          <thead><tr>
+            <th>District</th>
+            <th>PSDS</th>
+            <th>District Research Coordinator</th>
+            <th>Designation</th>
+          </tr></thead>
+          <tbody>${(p.masterlist?.rows || [])
+            .map(
+              (r) => `<tr>
+            <td><b>${r.district}</b></td>
+            <td>${r.psds}</td>
+            <td>${names(r.name)}</td>
+            <td>${r.role || "—"}</td>
+          </tr>`,
+            )
+            .join("")}</tbody>
+        </table>
+      </div>`;
     return (
       pageHero(p.title, p.sub) +
       sec(
         `<div class="grid g2">${p.items
           .map((c) => {
             const isDrc = c.name.startsWith("District Research Committee");
-            const list = isDrc ? coordinators : c.members.map((m) => `<li>${m}</li>`).join("");
+            const body = isDrc
+              ? table
+              : `<span class="tag">Members</span><ul class="bullets">${c.members.map((m) => `<li>${m}</li>`).join("")}</ul>`;
             return `
       <div class="card card-body reveal${isDrc ? " span-2" : ""}"><div class="row" style="padding:0 0 14px"><div class="ico">${icon("users")}</div><div class="grow"><h3>${c.name}</h3><p style="margin:0">${c.desc}</p></div></div>
-      <span class="tag">${isDrc ? "Coordinators" : "Members"}</span><ul class="bullets">${list}</ul></div>`;
+      ${body}</div>`;
           })
           .join("")}</div>`,
       )
