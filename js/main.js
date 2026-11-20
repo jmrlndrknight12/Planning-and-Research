@@ -117,8 +117,49 @@ document.addEventListener("DOMContentLoaded", () => {
         ${kids.length ? `<ul>${kids.map((k) => build(k, lvl + 1)).join("")}</ul>` : ""}</li>`;
     };
     const tree = document.getElementById("org-tree");
+    const scroller = tree.closest(".org-scroll");
     tree.innerHTML = `<ul>${build(window.ABOUT.org, 0)}</ul>`;
+    let panning = false;
+    let panMoved = false;
+    let panX = 0;
+    let panY = 0;
+    let panLeft = 0;
+    let panTop = 0;
+    scroller.addEventListener("pointerdown", (e) => {
+      if (e.button !== 0 || e.target.closest(".toggle")) return;
+      panning = true;
+      panMoved = false;
+      panX = e.clientX;
+      panY = e.clientY;
+      panLeft = scroller.scrollLeft;
+      panTop = scroller.scrollTop;
+      scroller.classList.add("is-dragging");
+      scroller.setPointerCapture(e.pointerId);
+    });
+    scroller.addEventListener("pointermove", (e) => {
+      if (!panning) return;
+      const dx = e.clientX - panX;
+      const dy = e.clientY - panY;
+      if (Math.abs(dx) > 5 || Math.abs(dy) > 5) panMoved = true;
+      scroller.scrollLeft = panLeft - dx;
+      scroller.scrollTop = panTop - dy;
+    });
+    const stopPan = () => {
+      panning = false;
+      scroller.classList.remove("is-dragging");
+    };
+    scroller.addEventListener("pointerup", stopPan);
+    scroller.addEventListener("pointercancel", () => {
+      stopPan();
+      panMoved = false;
+    });
     tree.addEventListener("click", (e) => {
+      if (panMoved) {
+        panMoved = false;
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+      }
       const t = e.target.closest(".toggle");
       if (t) {
         const li = t.closest("li");

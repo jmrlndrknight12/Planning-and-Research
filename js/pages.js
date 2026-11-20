@@ -128,7 +128,7 @@
       </div>`);
     const org = sec(
       `
-      ${head("Structure", "Organizational Structure", "Select a box for details. Use +/– to expand or collapse a branch.")}
+      ${head("Structure", "Organizational Structure", "Hold and drag to move the chart. Select a box for details. Use +/– to expand or collapse a branch.")}
       <div class="org-tools"><button class="chip" id="org-expand">Expand all</button><button class="chip" id="org-collapse">Collapse all</button></div>
       <div class="org-scroll reveal"><div class="tree" id="org-tree"></div></div>`,
       true,
