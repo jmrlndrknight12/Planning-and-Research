@@ -1704,6 +1704,12 @@ ul {
   border-bottom: 0;
 }
 
+.sheet tr.group td {
+  background: var(--deep);
+  color: #fff;
+  font-weight: 700;
+}
+
 .sheet tbody tr:hover td {
   background: var(--mint-50);
 }
