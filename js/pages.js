@@ -202,9 +202,7 @@
     const sdrcBoard = (c) => {
       const b = c.board;
       return `
-        <div class="sdr-members">${c.members
-          .map((m) => `<div class="sdr-member"><b>${m.name}</b><span>${m.role}</span></div>`)
-          .join("")}</div>
+        <div class="grid g4">${c.members.map(photoCard).join("")}</div>
         <div class="board-leads">
           <div><h4 class="board-label">Editor-in-Chief</h4>${photoCard(b.chief)}</div>
           <div><h4 class="board-label">Associate Editor</h4>${photoCard(b.associate)}</div>
@@ -212,7 +210,7 @@
         <h4 class="board-label">Managing Editors</h4>
         <div class="grid g4">${b.managing.map(photoCard).join("")}</div>
         <h4 class="board-label">Editors</h4>
-        <ul class="editors">${b.editors.map((e) => `<li><b>${e.name}</b><span>${e.role}</span></li>`).join("")}</ul>`;
+        <div class="grid g4">${b.editors.map(photoCard).join("")}</div>`;
     };
     return (
       pageHero(p.title, p.sub) +

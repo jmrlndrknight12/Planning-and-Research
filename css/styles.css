@@ -1150,7 +1150,7 @@ ul {
 }
 
 .portrait {
-  width: 108px;
+  width: 140px;
   aspect-ratio: 35 / 45;
   margin: 0 auto 12px;
   border-radius: 10px;
@@ -1161,10 +1161,6 @@ ul {
   background:
     linear-gradient(180deg, var(--mint-50), #fff);
   border: 1px dashed var(--primary);
-}
-
-.board-leads .portrait {
-  width: 140px;
 }
 
 .portrait img {
