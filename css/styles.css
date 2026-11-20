@@ -1259,6 +1259,14 @@ ul {
   height: 32px;
 }
 
+.tree li.stagger > ul {
+  padding-top: 250px;
+}
+
+.tree li.stagger > ul::before {
+  height: 250px;
+}
+
 .tree li.collapsed > ul {
   display: none;
 }

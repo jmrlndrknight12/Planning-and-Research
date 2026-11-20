@@ -111,12 +111,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* organizational chart */
   if (key === "about") {
-    const build = (n, lvl) => {
+    const build = (n, lvl, index = 0) => {
       const kids = n.children || [];
-      return `<li><div class="node lvl${Math.min(lvl, 3)}${n.titleOnly ? " title-only" : ""}" tabindex="0" role="button" data-n='${encodeURIComponent(JSON.stringify({ name: n.name, role: n.role, photo: n.photo, email: n.email, phone: n.phone, titleOnly: n.titleOnly }))}'>
+      const stagger = n.titleOnly && index % 2 === 1;
+      return `<li${stagger ? ' class="stagger"' : ""}><div class="node lvl${Math.min(lvl, 3)}${n.titleOnly ? " title-only" : ""}" tabindex="0" role="button" data-n='${encodeURIComponent(JSON.stringify({ name: n.name, role: n.role, photo: n.photo, email: n.email, phone: n.phone, titleOnly: n.titleOnly }))}'>
         ${n.titleOnly ? "" : avatar(n.name, n.photo)}<b>${n.name}</b>${n.role ? `<span>${n.role}</span>` : ""}
         ${kids.length ? `<button class="toggle" aria-label="Toggle branch" title="Expand / collapse">–</button>` : ""}</div>
-        ${kids.length ? `<ul>${kids.map((k) => build(k, lvl + 1)).join("")}</ul>` : ""}</li>`;
+        ${kids.length ? `<ul>${kids.map((k, i) => build(k, lvl + 1, i)).join("")}</ul>` : ""}</li>`;
     };
     const tree = document.getElementById("org-tree");
     const scroller = tree.closest(".org-scroll");
