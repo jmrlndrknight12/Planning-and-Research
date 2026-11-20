@@ -68,10 +68,6 @@
       })
       .join("");
     return `
-    <div class="topbar"><div class="container">
-      <span><b>Republic of the Philippines</b> · ${S.department}</span>
-      <span>${new Date().toLocaleDateString("en-PH", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}</span>
-    </div></div>
     <header class="site-header"><div class="container brand-row">
       <div class="logos">${logos}</div>
       <div class="brand-text">

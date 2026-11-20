@@ -178,26 +178,6 @@ ul {
   flex: none;
 }
 
-/* ---------- Top bar ---------- */
-.topbar {
-  background: var(--ink);
-  color: #bfe9e2;
-  font-size: .78rem;
-}
-
-.topbar .container {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 8px 0;
-  flex-wrap: wrap;
-}
-
-.topbar b {
-  color: var(--gold);
-  font-weight: 600;
-}
-
 /* ---------- Header ---------- */
 .site-header {
   background: var(--surface);
