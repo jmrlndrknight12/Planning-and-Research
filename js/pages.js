@@ -195,6 +195,25 @@
           <tbody>${schoolRows}</tbody>
         </table>
       </div>`;
+    const portrait = (photo) =>
+      `<div class="portrait">${photo ? `<img src="${photo}" alt="">` : icon("users")}</div>`;
+    const photoCard = (person) =>
+      `<div class="card person"><div>${portrait(person.photo)}<h3>${person.name}</h3><small>${person.role}</small></div></div>`;
+    const sdrcBoard = (c) => {
+      const b = c.board;
+      return `
+        <div class="sdr-members">${c.members
+          .map((m) => `<div class="sdr-member"><b>${m.name}</b><span>${m.role}</span></div>`)
+          .join("")}</div>
+        <div class="board-leads">
+          <div><h4 class="board-label">Editor-in-Chief</h4>${photoCard(b.chief)}</div>
+          <div><h4 class="board-label">Associate Editor</h4>${photoCard(b.associate)}</div>
+        </div>
+        <h4 class="board-label">Managing Editors</h4>
+        <div class="grid g4">${b.managing.map(photoCard).join("")}</div>
+        <h4 class="board-label">Editors</h4>
+        <ul class="editors">${b.editors.map((e) => `<li><b>${e.name}</b><span>${e.role}</span></li>`).join("")}</ul>`;
+    };
     return (
       pageHero(p.title, p.sub) +
       sec(
@@ -202,13 +221,16 @@
           .map((c) => {
             const isDrc = c.name.startsWith("District Research Committee");
             const isSrc = c.name.startsWith("School Research Committee");
+            const isSdrc = c.name.startsWith("Schools Division Research Committee");
             const body = isDrc
               ? drcTable
               : isSrc
                 ? srcTable
-                : `<span class="tag">Members</span><ul class="bullets">${c.members.map((m) => `<li>${m}</li>`).join("")}</ul>`;
+                : isSdrc
+                  ? sdrcBoard(c)
+                  : `<span class="tag">Members</span><ul class="bullets">${c.members.map((m) => `<li>${m}</li>`).join("")}</ul>`;
             return `
-      <div class="card card-body reveal${isDrc || isSrc ? " span-2" : ""}"><div class="row" style="padding:0 0 14px"><div class="ico">${icon("users")}</div><div class="grow"><h3>${c.name}</h3><p style="margin:0">${c.desc}</p></div></div>
+      <div class="card card-body reveal${isDrc || isSrc || isSdrc ? " span-2" : ""}"><div class="row" style="padding:0 0 14px"><div class="ico">${icon("users")}</div><div class="grow"><h3>${c.name}</h3><p style="margin:0">${c.desc}</p></div></div>
       ${body}</div>`;
           })
           .join("")}</div>`,

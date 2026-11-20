@@ -361,7 +361,40 @@ window.PAGES = {
       {
         name: "Schools Division Research Committee (SDRC)",
         desc: "Oversees research management, proposal review, and technical assistance at the schools division level.",
-        members: ["[Chairperson]", "[Member]", "[Member]"],
+        members: [
+          { name: "Hermogenes M. Panganiban, CESO V", role: "Schools Division Superintendent" },
+          { name: "Catherine M. Maranan, EdD", role: "Assistant Schools Division Superintendent" },
+          { name: "Angelisa A. Amoto, PhD", role: "Chief Education Supervisor, SGOD" },
+          { name: "Sacoro R. Comia, PhD", role: "Chief Education Supervisor, CID" },
+        ],
+        board: {
+          chief: {
+            name: "Marc Elmer M. Perez, EdD",
+            role: "Senior Education Program Specialist – Planning and Research",
+            photo: "",
+          },
+          associate: {
+            name: "Fe M. Fallurin, PhD",
+            role: "Education Program Supervisor, SGOD",
+            photo: "",
+          },
+          managing: [
+            { name: "Madonna B. Abrugena", role: "Planning Officer III", photo: "" },
+            { name: "Caroline C. Gayeta", role: "Senior Education Program Specialist", photo: "" },
+            { name: "Magielyn R. Babao", role: "Senior Education Program Specialist", photo: "" },
+            { name: "Alvin P. Metrillo", role: "Senior Education Program Specialist", photo: "" },
+          ],
+          editors: [
+            { name: "Gaylee G. Masangcay", role: "Principal I, Dao Elementary School" },
+            { name: "Gemma De Torres", role: "Principal IV, Batangas City South Elementary School" },
+            { name: "Camille Joy D. Robinson, PhD", role: "Master Teacher I, NAVERA Memorial Integrated School" },
+            { name: "Aurelia G. Vivas, PhD", role: "Education Program Supervisor – LRMDS" },
+            { name: "Roanne A. Mendoza", role: "Teacher II, Alangilan Senior High School" },
+            { name: "Suzette U. Serrano", role: "Teacher II, Alangilan Senior High School" },
+            { name: "Cyrus T. Festijo", role: "Project Development Officer II – LRMDS" },
+            { name: "Mary Rose R. Dilay", role: "Teacher III, Gulod Integrated School" },
+          ],
+        },
       },
       {
         name: "District Research Committee (DRC)",
