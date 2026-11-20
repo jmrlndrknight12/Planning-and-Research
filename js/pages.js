@@ -196,7 +196,7 @@
         </table>
       </div>`;
     const portrait = (photo) =>
-      `<div class="portrait">${photo ? `<img src="${photo}" alt="">` : icon("users")}</div>`;
+      `<div class="portrait">${photo ? `<img src="${encodeURI(photo)}" alt="">` : icon("users")}</div>`;
     const photoCard = (person) =>
       `<div class="card person"><div>${portrait(person.photo)}<h3>${person.name}</h3><small>${person.role}</small></div></div>`;
     const sdrcBoard = (c) => {

@@ -1163,11 +1163,17 @@ ul {
   border: 1px dashed var(--primary);
 }
 
+.portrait:has(img) {
+  border-style: solid;
+  border-color: var(--mint);
+  background: #fff;
+}
+
 .portrait img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
 }
 
 .portrait .icon {
@@ -1254,6 +1260,7 @@ ul {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   cursor: grab;
+  -webkit-user-select: none;
   user-select: none;
   touch-action: none;
 }

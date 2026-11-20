@@ -362,16 +362,16 @@ window.PAGES = {
         name: "Schools Division Research Committee (SDRC)",
         desc: "Oversees research management, proposal review, and technical assistance at the schools division level.",
         members: [
-          { name: "Hermogenes M. Panganiban, CESO V", role: "Schools Division Superintendent", photo: "" },
-          { name: "Catherine M. Maranan, EdD", role: "Assistant Schools Division Superintendent", photo: "" },
-          { name: "Angelisa A. Amoto, PhD", role: "Chief Education Supervisor, SGOD", photo: "" },
-          { name: "Sacoro R. Comia, PhD", role: "Chief Education Supervisor, CID", photo: "" },
+          { name: "Hermogenes M. Panganiban, CESO V", role: "Schools Division Superintendent", photo: "assets/HERMOGENES M. PANGANIBAN.png" },
+          { name: "Catherine M. Maranan, EdD", role: "Assistant Schools Division Superintendent", photo: "assets/CATHERINE V. MARANAN.png" },
+          { name: "Angelisa A. Amoto, PhD", role: "Chief Education Supervisor, SGOD", photo: "assets/DR. ANGELISA A. AMOTO.png" },
+          { name: "Sacoro R. Comia, PhD", role: "Chief Education Supervisor, CID", photo: "assets/DR. SACORO R. COMIA.png" },
         ],
         board: {
           chief: {
             name: "Marc Elmer M. Perez, EdD",
             role: "Senior Education Program Specialist – Planning and Research",
-            photo: "",
+            photo: "assets/Marc Elmer M. Perez.jpg",
           },
           associate: {
             name: "Fe M. Fallurin, PhD",
