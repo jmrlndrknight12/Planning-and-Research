@@ -208,16 +208,16 @@ ul {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 104px;
-  padding: 18px 0;
+  justify-content: flex-start;
+  gap: 28px;
+  min-height: 176px;
+  padding: 36px 0;
 }
 
 .brand-row > .logos {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  position: static;
+  transform: none;
+  flex: none;
 }
 
 .logos {
@@ -226,8 +226,8 @@ ul {
 }
 
 .logo-ph {
-  width: 64px;
-  height: 64px;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
   border: 2px dashed var(--primary);
   background: var(--mint-50);
@@ -248,15 +248,17 @@ ul {
 }
 
 .brand-text {
+  flex: 1;
   text-align: center;
-  padding-inline: 300px;
+  padding-inline: 12px 0;
   max-width: 100%;
+  min-width: 0;
 }
 
 .brand-text small {
   display: block;
-  font-size: .72rem;
-  letter-spacing: .14em;
+  font-size: 1.05rem;
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 700;
@@ -264,20 +266,21 @@ ul {
 
 .brand-text strong {
   display: block;
-  font-size: 1.25rem;
+  margin-top: 6px;
+  font-size: 2.35rem;
   color: var(--ink);
-  line-height: 1.2;
-  letter-spacing: -.01em;
+  line-height: 1.15;
+  letter-spacing: -.02em;
 }
 
 .brand-text span {
   display: inline-block;
-  margin-top: 4px;
-  font-size: .82rem;
+  margin-top: 10px;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #fff;
   background: linear-gradient(90deg, var(--primary), var(--mint));
-  padding: 3px 12px;
+  padding: 6px 18px;
   border-radius: 999px;
 }
 
@@ -1636,7 +1639,8 @@ ul {
   .brand-row {
     justify-content: flex-start;
     gap: 20px;
-    min-height: 0;
+    min-height: 150px;
+    padding: 28px 0;
   }
 
   .brand-row > .logos {
@@ -1731,8 +1735,17 @@ ul {
     font-size: .5rem;
   }
 
+  .brand-text small {
+    font-size: .78rem;
+    letter-spacing: .06em;
+  }
+
   .brand-text strong {
-    font-size: 1.02rem;
+    font-size: 1.45rem;
+  }
+
+  .brand-text span {
+    font-size: .95rem;
   }
 
   .mini {
