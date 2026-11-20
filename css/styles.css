@@ -387,7 +387,7 @@ ul {
   grid-template-columns: 1.25fr .9fr;
   gap: 48px;
   align-items: center;
-  padding: 84px 0 110px;
+  padding: 28px 0 100px;
 }
 
 .hero h1 {
@@ -1670,7 +1670,7 @@ ul {
 @media (max-width: 900px) {
   .hero .container {
     grid-template-columns: 1fr;
-    padding: 56px 0 90px;
+    padding: 24px 0 80px;
   }
 
   .feature,
