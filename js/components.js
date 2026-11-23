@@ -53,7 +53,7 @@
     const logos = S.logos
       .map(
         (l) =>
-          `<div class="logo-ph${l.src ? " has-logo" : ""}" title="${l.label}">${l.src ? `<img src="${l.src}" alt="${l.label}">` : l.label}</div>`,
+          `<div class="logo-ph${l.src ? " has-logo" : ""}" title="${l.label}">${l.src ? `<img src="${encodeURI(l.src)}" alt="${l.label}">` : l.label}</div>`,
       )
       .join("");
     const links = S.nav
@@ -92,7 +92,7 @@
     const logos = S.logos
       .map(
         (l) =>
-          `<div class="logo-ph${l.src ? " has-logo" : ""}">${l.src ? `<img src="${l.src}" alt="${l.label}">` : "LOGO"}</div>`,
+          `<div class="logo-ph${l.src ? " has-logo" : ""}">${l.src ? `<img src="${encodeURI(l.src)}" alt="${l.label}">` : "LOGO"}</div>`,
       )
       .join("");
     const quick = S.nav

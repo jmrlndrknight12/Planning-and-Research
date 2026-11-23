@@ -14,9 +14,8 @@ window.SITE = {
   // Four logos in the header. Put the image path in "src" (e.g. "assets/logos/deped.png")
   logos: [
     { label: "DepEd Logo", src: "assets/logos/deped.svg" },
-    { label: "SDO Batangas City Logo", src: "" },
-    { label: "Planning & Research Logo", src: "" },
-    { label: "Official Logo 4", src: "" },
+    { label: "SDO Batangas City Logo", src: "assets/logos/sdo logo.jpg" },
+    { label: "Planning and Research Logo", src: "assets/logos/planning and research logo.png" },
   ],
 
   contact: {
