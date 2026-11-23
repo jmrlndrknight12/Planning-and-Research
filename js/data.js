@@ -181,18 +181,18 @@ window.ABOUT = {
       photo: "",
     },
     {
+      name: "Dr. Marc Elmer M. Perez",
+      role: "Senior Education Program Specialist – Planning and Research",
+      email: "",
+      phone: "",
+      photo: "assets/Marc Elmer M. Perez.jpg",
+    },
+    {
       name: "Madonna B. Abrugena",
       role: "Planning Officer III",
       email: "",
       phone: "",
       photo: "",
-    },
-    {
-      name: "Marc Elmer M. Perez",
-      role: "Senior Education Program Specialist – Planning and Research",
-      email: "",
-      phone: "",
-      photo: "assets/Marc Elmer M. Perez.jpg",
     },
   ],
   hub: {
@@ -245,14 +245,14 @@ window.ABOUT = {
                     titleOnly: true,
                     children: [
                       {
+                        name: "Dr. Marc Elmer M. Perez",
+                        role: "Senior Education Program Specialist – Planning and Research",
+                        photo: "assets/Marc Elmer M. Perez.jpg",
+                      },
+                      {
                         name: "Madonna B. Abrugena",
                         role: "Planning Officer III",
                         photo: "",
-                      },
-                      {
-                        name: "Marc Elmer M. Perez",
-                        role: "Senior Education Program Specialist – Planning and Research",
-                        photo: "assets/Marc Elmer M. Perez.jpg",
                       },
                     ],
                   },
@@ -742,7 +742,7 @@ window.PAGES = {
         { name: "Sacoro R. Comia, PhD", role: "Chief Education Supervisor, CID", photo: "assets/DR. SACORO R. COMIA.png" },
       ],
       chief: {
-        name: "Marc Elmer M. Perez, EdD",
+        name: "Dr. Marc Elmer M. Perez, EdD",
         role: "Senior Education Program Specialist – Planning and Research",
         photo: "assets/Marc Elmer M. Perez.jpg",
       },
