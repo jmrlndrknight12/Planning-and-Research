@@ -113,7 +113,7 @@
       <div><h4>Contact</h4><ul>
         <li>${c.mapUrl ? `<a href="${c.mapUrl}" target="_blank" rel="noopener">${c.address}</a>` : c.address}</li><li>${c.email}</li><li>${c.phone}</li><li>${c.hours}</li></ul></div>
     </div>
-    <div class="copy">© ${new Date().getFullYear()} ${S.office} – ${S.unit}. All rights reserved.<br>Developed by Marc Elmer M. Perez and Jomarlon D. Delos Reyes</div></footer>
+    <div class="copy">© ${new Date().getFullYear()} ${S.office} – ${S.unit}. All rights reserved.<br>Developed by Dr. Marc Elmer M. Perez and Jomarlon D. Delos Reyes</div></footer>
     <button class="to-top" aria-label="Back to top">↑</button>
     <div class="modal" id="modal"><div class="modal-box"><button class="modal-x" aria-label="Close">×</button><div id="modal-body"></div></div></div>`;
   }
