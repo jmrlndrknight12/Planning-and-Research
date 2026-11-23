@@ -240,6 +240,7 @@ ul {
 .logo-ph {
   width: 84px;
   height: 84px;
+  flex: 0 0 84px;
   border-radius: 50%;
   border: 2px dashed var(--primary);
   background: var(--mint-50);
@@ -263,7 +264,8 @@ ul {
 .logo-ph img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .brand-text {
@@ -1710,10 +1712,12 @@ ul {
 }
 
 .footer .logo-ph {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  border-radius: 50%;
   border-color: var(--mint);
-  background: rgba(255, 255, 255, .06);
+  background: #fff;
   color: var(--mint);
 }
 
@@ -1937,6 +1941,7 @@ ul {
   .logo-ph {
     width: 48px;
     height: 48px;
+    flex: 0 0 48px;
     font-size: .5rem;
   }
 

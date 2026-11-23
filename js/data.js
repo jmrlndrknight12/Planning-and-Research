@@ -16,6 +16,7 @@ window.SITE = {
     { label: "DepEd Logo", src: "assets/logos/deped.svg" },
     { label: "SDO Batangas City Logo", src: "assets/logos/sdo logo.jpg" },
     { label: "Planning and Research Logo", src: "assets/logos/planning and research logo.png" },
+    { label: "Official Logo", src: "" },
   ],
 
   contact: {
