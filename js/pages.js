@@ -217,15 +217,15 @@
             const isDrc = c.name.startsWith("District Research Committee");
             const isSrc = c.name.startsWith("School Research Committee");
             const isSdrc = c.name.startsWith("Schools Division Research Committee");
-            const body = isDrc
-              ? drcTable
-              : isSrc
-                ? srcTable
-                : isSdrc
-                  ? editorialBoard(c.board)
+            const body = isSdrc
+              ? ""
+              : isDrc
+                ? drcTable
+                : isSrc
+                  ? srcTable
                   : `<span class="tag">Members</span><ul class="bullets">${c.members.map((m) => `<li>${m}</li>`).join("")}</ul>`;
             return `
-      <div class="card card-body reveal${isDrc || isSrc || isSdrc ? " span-2" : ""}"><div class="row" style="padding:0 0 14px"><div class="ico">${icon("users")}</div><div class="grow"><h3>${c.name}</h3><p style="margin:0">${c.desc}</p></div></div>
+      <div class="card card-body reveal${isDrc || isSrc || isSdrc ? " span-2" : ""}"><div class="row" style="padding:0${body ? " 0 14px" : ""}"><div class="ico">${icon("users")}</div><div class="grow"><h3>${c.name}</h3><p style="margin:0">${c.desc}</p></div></div>
       ${body}</div>`;
           })
           .join("")}</div>`,
@@ -331,7 +331,7 @@
       pageHero(p.title, p.sub) +
       sec(`
       ${head("About", "About BRACE")}<div class="card card-body reveal" style="margin-bottom:48px"><p style="font-size:1rem;margin:0">${p.about}</p></div>
-      ${head("Leadership", "Officers")}<div class="grid g4" style="margin-bottom:48px">${p.officers.map(photoCard).join("")}</div>
+      ${head("Leadership", "Officers")}<div style="margin-bottom:48px"><div class="grid g4">${p.officers.members.map(photoCard).join("")}</div>${editorialBoard(p.officers)}</div>
       ${head("Programs", "Activities")}<div class="grid g3">${p.activities.map((a, i) => `<div class="card card-body reveal"><div class="num">${String(i + 1).padStart(2, "0")}</div><h3 style="margin-top:8px">${a.title}</h3><p>${a.text}</p></div>`).join("")}</div>`)
     );
   };

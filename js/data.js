@@ -361,34 +361,6 @@ window.PAGES = {
       {
         name: "Schools Division Research Committee (SDRC)",
         desc: "Oversees research management, proposal review, and technical assistance at the schools division level.",
-        board: {
-          chief: {
-            name: "Marc Elmer M. Perez, EdD",
-            role: "Senior Education Program Specialist – Planning and Research",
-            photo: "assets/Marc Elmer M. Perez.jpg",
-          },
-          associate: {
-            name: "Fe M. Fallurin, PhD",
-            role: "Education Program Supervisor, SGOD",
-            photo: "",
-          },
-          managing: [
-            { name: "Madonna B. Abrugena", role: "Planning Officer III", photo: "" },
-            { name: "Caroline C. Gayeta", role: "Senior Education Program Specialist", photo: "" },
-            { name: "Magielyn R. Babao", role: "Senior Education Program Specialist", photo: "" },
-            { name: "Alvin P. Metrillo", role: "Senior Education Program Specialist", photo: "" },
-          ],
-          editors: [
-            { name: "Gaylee G. Masangcay", role: "Principal I, Dao Elementary School", photo: "" },
-            { name: "Gemma De Torres", role: "Principal IV, Batangas City South Elementary School", photo: "" },
-            { name: "Camille Joy D. Robinson, PhD", role: "Master Teacher I, NAVERA Memorial Integrated School", photo: "" },
-            { name: "Aurelia G. Vivas, PhD", role: "Education Program Supervisor – LRMDS", photo: "" },
-            { name: "Roanne A. Mendoza", role: "Teacher II, Alangilan Senior High School", photo: "" },
-            { name: "Suzette U. Serrano", role: "Teacher II, Alangilan Senior High School", photo: "" },
-            { name: "Cyrus T. Festijo", role: "Project Development Officer II – LRMDS", photo: "" },
-            { name: "Mary Rose R. Dilay", role: "Teacher III, Gulod Integrated School", photo: "" },
-          ],
-        },
       },
       {
         name: "District Research Committee (DRC)",
@@ -762,12 +734,40 @@ window.PAGES = {
     title: "BRACE Organization",
     sub: "[Full meaning of BRACE – to be provided.]",
     about: "[About the BRACE Organization – official description to be provided.]",
-    officers: [
-      { name: "Hermogenes M. Panganiban, CESO V", role: "Schools Division Superintendent", photo: "assets/HERMOGENES M. PANGANIBAN.png" },
-      { name: "Catherine M. Maranan, EdD", role: "Assistant Schools Division Superintendent", photo: "assets/CATHERINE V. MARANAN.png" },
-      { name: "Angelisa A. Amoto, PhD", role: "Chief Education Supervisor, SGOD", photo: "assets/DR. ANGELISA A. AMOTO.png" },
-      { name: "Sacoro R. Comia, PhD", role: "Chief Education Supervisor, CID", photo: "assets/DR. SACORO R. COMIA.png" },
-    ],
+    officers: {
+      members: [
+        { name: "Hermogenes M. Panganiban, CESO V", role: "Schools Division Superintendent", photo: "assets/HERMOGENES M. PANGANIBAN.png" },
+        { name: "Catherine M. Maranan, EdD", role: "Assistant Schools Division Superintendent", photo: "assets/CATHERINE V. MARANAN.png" },
+        { name: "Angelisa A. Amoto, PhD", role: "Chief Education Supervisor, SGOD", photo: "assets/DR. ANGELISA A. AMOTO.png" },
+        { name: "Sacoro R. Comia, PhD", role: "Chief Education Supervisor, CID", photo: "assets/DR. SACORO R. COMIA.png" },
+      ],
+      chief: {
+        name: "Marc Elmer M. Perez, EdD",
+        role: "Senior Education Program Specialist – Planning and Research",
+        photo: "assets/Marc Elmer M. Perez.jpg",
+      },
+      associate: {
+        name: "Fe M. Fallurin, PhD",
+        role: "Education Program Supervisor, SGOD",
+        photo: "",
+      },
+      managing: [
+        { name: "Madonna B. Abrugena", role: "Planning Officer III", photo: "" },
+        { name: "Caroline C. Gayeta", role: "Senior Education Program Specialist", photo: "" },
+        { name: "Magielyn R. Babao", role: "Senior Education Program Specialist", photo: "" },
+        { name: "Alvin P. Metrillo", role: "Senior Education Program Specialist", photo: "" },
+      ],
+      editors: [
+        { name: "Gaylee G. Masangcay", role: "Principal I, Dao Elementary School", photo: "" },
+        { name: "Gemma De Torres", role: "Principal IV, Batangas City South Elementary School", photo: "" },
+        { name: "Camille Joy D. Robinson, PhD", role: "Master Teacher I, NAVERA Memorial Integrated School", photo: "" },
+        { name: "Aurelia G. Vivas, PhD", role: "Education Program Supervisor – LRMDS", photo: "" },
+        { name: "Roanne A. Mendoza", role: "Teacher II, Alangilan Senior High School", photo: "" },
+        { name: "Suzette U. Serrano", role: "Teacher II, Alangilan Senior High School", photo: "" },
+        { name: "Cyrus T. Festijo", role: "Project Development Officer II – LRMDS", photo: "" },
+        { name: "Mary Rose R. Dilay", role: "Teacher III, Gulod Integrated School", photo: "" },
+      ],
+    },
     activities: [
       { title: "[Activity / Program]", text: "[Description]" },
       { title: "[Activity / Program]", text: "[Description]" },
