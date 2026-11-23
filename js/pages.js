@@ -9,6 +9,21 @@
   const head = (eyebrow, title, p) =>
     `<div class="section-head reveal"><div><span class="eyebrow">${eyebrow}</span><h2>${title}</h2>${p ? `<p>${p}</p>` : ""}</div></div>`;
 
+  const portrait = (photo) =>
+    `<div class="portrait">${photo ? `<img src="${encodeURI(photo)}" alt="">` : icon("users")}</div>`;
+  const photoCard = (person) =>
+    `<div class="card person"><div>${portrait(person.photo)}<h3>${person.name}</h3><small>${person.role}</small></div></div>`;
+  const officerBoard = (b) => `
+        <div class="grid g4">${b.members.map(photoCard).join("")}</div>
+        <div class="board-leads">
+          <div><h4 class="board-label">Editor-in-Chief</h4>${photoCard(b.chief)}</div>
+          <div><h4 class="board-label">Associate Editor</h4>${photoCard(b.associate)}</div>
+        </div>
+        <h4 class="board-label">Managing Editors</h4>
+        <div class="grid g4">${b.managing.map(photoCard).join("")}</div>
+        <h4 class="board-label">Editors</h4>
+        <div class="grid g4">${b.editors.map(photoCard).join("")}</div>`;
+
   const R = {};
 
   /* ---------------- HOME ---------------- */
@@ -195,23 +210,6 @@
           <tbody>${schoolRows}</tbody>
         </table>
       </div>`;
-    const portrait = (photo) =>
-      `<div class="portrait">${photo ? `<img src="${encodeURI(photo)}" alt="">` : icon("users")}</div>`;
-    const photoCard = (person) =>
-      `<div class="card person"><div>${portrait(person.photo)}<h3>${person.name}</h3><small>${person.role}</small></div></div>`;
-    const sdrcBoard = (c) => {
-      const b = c.board;
-      return `
-        <div class="grid g4">${c.members.map(photoCard).join("")}</div>
-        <div class="board-leads">
-          <div><h4 class="board-label">Editor-in-Chief</h4>${photoCard(b.chief)}</div>
-          <div><h4 class="board-label">Associate Editor</h4>${photoCard(b.associate)}</div>
-        </div>
-        <h4 class="board-label">Managing Editors</h4>
-        <div class="grid g4">${b.managing.map(photoCard).join("")}</div>
-        <h4 class="board-label">Editors</h4>
-        <div class="grid g4">${b.editors.map(photoCard).join("")}</div>`;
-    };
     return (
       pageHero(p.title, p.sub) +
       sec(
@@ -219,16 +217,13 @@
           .map((c) => {
             const isDrc = c.name.startsWith("District Research Committee");
             const isSrc = c.name.startsWith("School Research Committee");
-            const isSdrc = c.name.startsWith("Schools Division Research Committee");
             const body = isDrc
               ? drcTable
               : isSrc
                 ? srcTable
-                : isSdrc
-                  ? sdrcBoard(c)
-                  : `<span class="tag">Members</span><ul class="bullets">${c.members.map((m) => `<li>${m}</li>`).join("")}</ul>`;
+                : `<span class="tag">Members</span><ul class="bullets">${c.members.map((m) => `<li>${m}</li>`).join("")}</ul>`;
             return `
-      <div class="card card-body reveal${isDrc || isSrc || isSdrc ? " span-2" : ""}"><div class="row" style="padding:0 0 14px"><div class="ico">${icon("users")}</div><div class="grow"><h3>${c.name}</h3><p style="margin:0">${c.desc}</p></div></div>
+      <div class="card card-body reveal${isDrc || isSrc ? " span-2" : ""}"><div class="row" style="padding:0 0 14px"><div class="ico">${icon("users")}</div><div class="grow"><h3>${c.name}</h3><p style="margin:0">${c.desc}</p></div></div>
       ${body}</div>`;
           })
           .join("")}</div>`,
@@ -334,7 +329,7 @@
       pageHero(p.title, p.sub) +
       sec(`
       ${head("About", "About BRACE")}<div class="card card-body reveal" style="margin-bottom:48px"><p style="font-size:1rem;margin:0">${p.about}</p></div>
-      ${head("Leadership", "Officers")}<div class="grid g4" style="margin-bottom:48px">${p.officers.map((o) => `<div class="card person reveal">${avatar(o.name, o.photo)}<h3>${o.name}</h3><small>${o.role}</small></div>`).join("")}</div>
+      ${head("Leadership", "Officers")}<div style="margin-bottom:48px">${officerBoard(p.officers)}</div>
       ${head("Programs", "Activities")}<div class="grid g3">${p.activities.map((a, i) => `<div class="card card-body reveal"><div class="num">${String(i + 1).padStart(2, "0")}</div><h3 style="margin-top:8px">${a.title}</h3><p>${a.text}</p></div>`).join("")}</div>`)
     );
   };
